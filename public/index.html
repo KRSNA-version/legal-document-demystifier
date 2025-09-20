@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Document Demystifier</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<!-- -- -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Document Demystifier</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Legal Document Demystifier ⚖️</h1>
+            <p>Upload a .pdf or .docx file to get a simple, clear explanation.</p>
+            
+        </header>
+        <main>
+    <div class="input-toggles">
+        <button id="uploadTabBtn" class="toggle-btn active">Upload Document</button>
+        <button id="pasteTabBtn" class="toggle-btn">Paste Text</button>
+    </div>
+
+    <div id="uploadContainer" class="input-container">
+        <input type="file" id="fileInput" accept=".pdf, .docx" style="display: none;">
+        <button id="uploadBtn">Choose Document</button>
+        <span id="fileName">No file selected</span>
+    </div>
+
+    <div id="pasteContainer" class="input-container hidden">
+        <textarea id="textInput" placeholder="Paste your complex legal text directly here..."></textarea>
+    </div>
+
+    <button id="analyzeBtn">Analyze Now</button>
+    
+    <div id="resultsContainer">
+        <div id="loader" class="hidden"></div>
+    </div>
+</main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
