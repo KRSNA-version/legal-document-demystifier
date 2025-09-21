@@ -11,7 +11,7 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 
 // 2. INITIALIZE APP & SERVICES
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const upload = multer({ storage: multer.memoryStorage() });
 
@@ -88,5 +88,5 @@ app.post('/analyze', upload.single('document'), async (req, res) => {
 
 // 5. START THE SERVER
 app.listen(port, () => {
-    console.log(`Server is running at http://localhost:${port}`);
+    console.log(`Server is running on port ${port}`)
 });
