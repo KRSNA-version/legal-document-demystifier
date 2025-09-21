@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // C) The fetch call (no change here)
         try {
-            const response = await fetch('http://localhost:3000/analyze', {
+            const response = await fetch('/analyze', {
                 method: 'POST',
                 headers: fetchHeaders,
                 body: fetchBody,
