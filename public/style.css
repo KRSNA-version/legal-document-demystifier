@@ -1,0 +1,205 @@
+/* style.css (Complete New Version) */
+
+/* === 1. Variables and Root Setup === */
+:root {
+    --font-family: 'Poppins', sans-serif;
+    --background-color: #121829;
+    --card-background: rgba(22, 29, 53, 0.7);
+    --primary-text: #f0f0f0;
+    --secondary-text: #a0aec0;
+    --border-color: rgba(132, 114, 244, 0.3);
+    --accent-gradient: linear-gradient(90deg, #8472f4, #6618c7);
+    --hover-glow: 0 0 15px rgba(132, 114, 244, 0.5);
+}
+
+/* === 2. Global Styles & Background === */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--primary-text);
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background-image: 
+        radial-gradient(circle at 15% 15%, rgba(132, 114, 244, 0.3) 0%, transparent 30%),
+        radial-gradient(circle at 85% 80%, rgba(102, 24, 199, 0.3) 0%, transparent 30%);
+    background-attachment: fixed;
+}
+
+/* === 3. Main Container (Glassmorphism Effect) === */
+.container {
+    width: 100%;
+    max-width: 800px;
+    background: var(--card-background);
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 40px;
+}
+
+/* === 4. Header & Typography === */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: var(--accent-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+}
+
+header p {
+    color: var(--secondary-text);
+    font-size: 1.1rem;
+}
+
+/* === 5. Input Area & Tabs === */
+.input-toggles {
+    display: flex;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background-color: transparent;
+    color: var(--secondary-text);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn.active {
+    background: var(--accent-gradient);
+    color: white;
+    box-shadow: var(--hover-glow);
+}
+
+#textInput {
+    width: 100%;
+    min-height: 200px;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: rgba(0, 0, 0, 0.2);
+    color: var(--primary-text);
+    font-family: inherit;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+#textInput:focus {
+    outline: none;
+    border-color: #8472f4;
+    box-shadow: var(--hover-glow);
+}
+
+/* === 6. Buttons & File Input Display === */
+#uploadBtn, #analyzeBtn {
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#analyzeBtn {
+    background: var(--accent-gradient);
+    color: white;
+    margin-top: 20px;
+}
+
+#analyzeBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--hover-glow);
+}
+
+#uploadBtn {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--primary-text);
+    border: 1px solid var(--border-color);
+    margin-bottom: 10px;
+}
+
+#uploadBtn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: #8472f4;
+}
+
+#fileName {
+    font-style: italic;
+    color: var(--secondary-text);
+    text-align: center;
+    padding: 5px;
+}
+
+/* === 7. Results & Loader === */
+#resultsContainer {
+    margin-top: 30px;
+    padding: 30px;
+    border-radius: 8px;
+    min-height: 100px;
+    line-height: 1.7;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color);
+}
+
+#resultsContainer h3 {
+    background: var(--accent-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.error {
+    color: #ff6b6b;
+    font-weight: bold;
+    text-align: center;
+}
+
+#loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    border-top: 5px solid #8472f4;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
