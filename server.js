@@ -55,7 +55,7 @@ app.post('/analyze', upload.single('document'), async (req, res) => {
         const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
         const prompt = `
             You are an expert legal assistant AI. Your job is to demystify complex legal documents for the average person.
-            Do NOT provide legal advice. Always start your response with a clear disclaimer: "**Disclaimer:** This is an AI analysis and not legal advice. Consult a qualified legal professional."
+            Do NOT provide legal advice. Always identify the language in which the user is asking, reponse him/her in his preffered language or the language in which the input text is coming okay, if he uploads a text in hindi then reply inn Hindi and, Always start your response with a clear disclaimer: "**Disclaimer:** This is an AI analysis and not legal advice. Consult a qualified legal professional."
             Analyze the following legal text:
 
             ---
